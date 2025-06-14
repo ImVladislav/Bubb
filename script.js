@@ -168,14 +168,16 @@ class BubbPageFlip {
             // При пролистуванні вперед - анімуємо поточну сторінку
             animatingElement = currentPageElement;
             staticElement = targetPageElement;
+            // Цільова сторінка вже видима під поточною
             targetPageElement.style.zIndex = '5';
             currentPageElement.style.zIndex = '100';
         } else {
-            // При пролистуванні назад - анімуємо поточну сторінку (інверсивно)
-            animatingElement = currentPageElement;
-            staticElement = targetPageElement;
-            targetPageElement.style.zIndex = '5';
-            currentPageElement.style.zIndex = '100';
+            // При пролистуванні назад - анімуємо ПОПЕРЕДНЮ (цільову) сторінку
+            animatingElement = targetPageElement;
+            staticElement = currentPageElement;
+            // Поточна сторінка залишається видимою під анімованою
+            currentPageElement.style.zIndex = '5';
+            targetPageElement.style.zIndex = '100';
         }
         
         console.log('🎬 Starting page flip animation...', isForward ? 'FORWARD' : 'BACKWARD');
@@ -221,17 +223,20 @@ class BubbPageFlip {
                     page.style.zIndex = String(this.totalPages - index + 1); // Наступні сторінки в порядку
                 }
             });
+            
+            console.log(`✅ Page ${targetPage + 1} is now visible after animation`);
         }, 2500); // Час анімації CSS (2.5 секунди)
         
-        this.currentPage = targetPage;
-        this.updatePageIndicator();
-        
-        // Анімуємо контент після завершення перегортування
+        // Оновлюємо currentPage тільки після завершення анімації
         setTimeout(() => {
+            this.currentPage = targetPage;
+            this.updatePageIndicator();
+            
+            // Анімуємо контент після завершення перегортування
             this.animatePageContent();
-        }, 2800);
+        }, 2500);
         
-        console.log(`✅ Successfully flipped to page ${targetPage + 1}`);
+        console.log(`🎬 Animation started for page ${targetPage + 1}`);
     }
     
     nextPageWithCornerEffect() {
