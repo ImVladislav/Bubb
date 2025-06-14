@@ -1,0 +1,1182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.book-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+
+.page-wrapper {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(128, 128, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transform-origin: center left;
+    transform-style: preserve-3d;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+
+
+/* Ефект перегортування сторінки вперед */
+.page-flipping {
+    z-index: 100 !important;
+    transform-origin: center left;
+    position: absolute;
+    animation: realPageFlip 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Ефект перегортування сторінки назад */
+.page-flipping-back {
+    z-index: 100 !important;
+    transform-origin: center left;
+    position: absolute;
+    animation: realPageFlipBack 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Створюємо реалістичний ефект згину */
+.page-flipping::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    z-index: 1;
+    transform-origin: top left;
+    animation: paperFold 2s ease-in-out forwards;
+    border: 1px solid rgba(128, 128, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Реалістична анімація згину паперу */
+@keyframes paperFold {
+    0% {
+        transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+    }
+    
+    25% {
+        transform: perspective(1000px) rotateY(15deg) rotateX(-5deg) translateZ(10px);
+        clip-path: polygon(0% 0%, 85% 0%, 90% 10%, 95% 15%, 100% 20%, 100% 100%, 0% 100%);
+        box-shadow: 15px 10px 25px rgba(0, 0, 0, 0.2);
+        opacity: 0.9;
+    }
+    
+    50% {
+        transform: perspective(1000px) rotateY(45deg) rotateX(-10deg) translateZ(20px);
+        clip-path: polygon(0% 0%, 60% 0%, 70% 20%, 80% 30%, 90% 40%, 100% 50%, 100% 100%, 0% 100%);
+        box-shadow: 25px 15px 35px rgba(0, 0, 0, 0.3);
+        opacity: 0.7;
+    }
+    
+    75% {
+        transform: perspective(1000px) rotateY(90deg) rotateX(-15deg) translateZ(30px);
+        clip-path: polygon(0% 0%, 30% 0%, 45% 30%, 60% 45%, 75% 60%, 90% 75%, 100% 85%, 100% 100%, 0% 100%);
+        box-shadow: 35px 20px 45px rgba(0, 0, 0, 0.4);
+        opacity: 0.4;
+    }
+    
+    90% {
+        transform: perspective(1000px) rotateY(135deg) rotateX(-10deg) translateZ(20px);
+        clip-path: polygon(0% 0%, 10% 0%, 25% 40%, 40% 55%, 55% 70%, 70% 80%, 85% 90%, 100% 95%, 100% 100%, 0% 100%);
+        box-shadow: 25px 15px 35px rgba(0, 0, 0, 0.3);
+        opacity: 0.2;
+    }
+    
+    100% {
+        transform: perspective(1000px) rotateY(180deg) rotateX(0deg) translateZ(0px);
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        opacity: 0;
+    }
+}
+
+
+
+/* Анімація повного перегортування сторінки вперед */
+@keyframes realPageFlip {
+    0% {
+        transform: perspective(1200px) rotateY(0deg) translateZ(0px);
+        opacity: 1;
+    }
+    
+    15% {
+        transform: perspective(1200px) rotateY(15deg) translateZ(30px);
+        opacity: 0.9;
+    }
+    
+    30% {
+        transform: perspective(1200px) rotateY(45deg) translateZ(80px);
+        opacity: 0.8;
+    }
+    
+    50% {
+        transform: perspective(1200px) rotateY(90deg) translateZ(120px);
+        opacity: 0.6;
+    }
+    
+    70% {
+        transform: perspective(1200px) rotateY(135deg) translateZ(80px);
+        opacity: 0.4;
+    }
+    
+    85% {
+        transform: perspective(1200px) rotateY(165deg) translateZ(30px);
+        opacity: 0.2;
+    }
+    
+    100% {
+        transform: perspective(1200px) rotateY(180deg) translateZ(0px);
+        opacity: 0;
+    }
+}
+
+/* Анімація повного перегортування сторінки назад (інверсія вперед) */
+@keyframes realPageFlipBack {
+    0% {
+        transform: perspective(1200px) rotateY(0deg) translateZ(0px);
+        opacity: 1;
+    }
+    
+    15% {
+        transform: perspective(1200px) rotateY(-15deg) translateZ(30px);
+        opacity: 0.9;
+    }
+    
+    30% {
+        transform: perspective(1200px) rotateY(-45deg) translateZ(80px);
+        opacity: 0.8;
+    }
+    
+    50% {
+        transform: perspective(1200px) rotateY(-90deg) translateZ(120px);
+        opacity: 0.6;
+    }
+    
+    70% {
+        transform: perspective(1200px) rotateY(-135deg) translateZ(80px);
+        opacity: 0.4;
+    }
+    
+    85% {
+        transform: perspective(1200px) rotateY(-165deg) translateZ(30px);
+        opacity: 0.2;
+    }
+    
+    100% {
+        transform: perspective(1200px) rotateY(-180deg) translateZ(0px);
+        opacity: 0;
+    }
+}
+
+/* Простий ефект підняття кутка */
+.corner-lift {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(-45deg, rgba(255,255,255,0.8) 0%, transparent 100%);
+    transform-origin: top left;
+    animation: simpleCornerLift 0.3s ease-out forwards;
+    pointer-events: none;
+    z-index: 5;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+
+@keyframes simpleCornerLift {
+    0% {
+        transform: rotateZ(0deg) translateX(0) translateY(0);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: rotateZ(10deg) translateX(5px) translateY(-5px);
+        opacity: 0.6;
+    }
+}
+
+/* Проста тінь під сторінкою */
+.page-flip-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top left, rgba(0,0,0,0.2) 0%, transparent 60%);
+    opacity: 0;
+    animation: simpleShadow 2s ease-in-out forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes simpleShadow {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 0.3;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+.page-content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.page-content > * {
+    max-width: 100%;
+    width: auto;
+}
+
+/* Стилі для page-flip бібліотеки */
+#book {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+}
+
+.page-wrapper:nth-child(1) {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+.page-wrapper:nth-child(2) {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f0 100%);
+}
+
+.page-wrapper:nth-child(3) {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f5f0 100%);
+}
+
+/* .content замінено на .page-content вище */
+
+/* Головна секція */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 90vw;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.coin-animation {
+    font-size: 5rem;
+    animation: float 3s ease-in-out infinite, rotate 6s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #808000, #9acd32, #808000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.3); }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(128, 128, 0, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 0, 0.3);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+    color: #808000;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #808000, #9acd32);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 30px rgba(128, 128, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(128, 128, 0, 0.4);
+}
+
+/* Індикатор скролу */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(51, 51, 51, 0.7);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-arrow {
+    font-size: 1.5rem;
+}
+
+/* Секція особливостей */
+.section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.feature-card {
+    background: rgba(128, 128, 0, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(128, 128, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(128, 128, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #808000;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', monospace;
+}
+
+.feature-card p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.price-chart {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chart-placeholder {
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.chart-line {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    height: 3px;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A, #CDDC39, #FFC107, #FF9800);
+    border-radius: 2px;
+    animation: drawLine 3s ease-in-out infinite alternate;
+}
+
+@keyframes drawLine {
+    0% { width: 20%; }
+    100% { width: 95%; }
+}
+
+.price-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+}
+
+.price-change {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.price-change.positive {
+    color: #4CAF50;
+}
+
+/* Секція дій */
+.action-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+    max-width: 90vw;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.purchase-card {
+    background: rgba(128, 128, 0, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 0, 0.2);
+}
+
+.purchase-card h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(128, 128, 0, 0.3);
+    border-radius: 10px;
+    background: rgba(128, 128, 0, 0.1);
+    color: #333;
+    font-size: 1rem;
+}
+
+.input-group input::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.conversion-info {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #808000;
+    font-family: 'Orbitron', monospace;
+}
+
+.purchase-button {
+    width: 100%;
+    background: linear-gradient(45deg, #808000, #9acd32);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.purchase-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(128, 128, 0, 0.3);
+}
+
+.social-links h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(128, 128, 0, 0.1);
+    border-radius: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(128, 128, 0, 0.2);
+}
+
+.social-link:hover {
+    background: rgba(128, 128, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.footer-info {
+    margin-top: 2rem;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 90vw;
+    width: 100%;
+}
+
+.disclaimer {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .page-content {
+        padding: 0.5rem;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 95vw;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 95vw;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .action-section {
+        grid-template-columns: 1fr;
+        max-width: 95vw;
+    }
+    
+    .coin-animation {
+        font-size: 3rem;
+    }
+    
+    .hero {
+        max-width: 95vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-content {
+        padding: 0.25rem;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        max-width: 98vw;
+    }
+    
+    .features-grid {
+        max-width: 98vw;
+    }
+    
+    .action-section {
+        max-width: 98vw;
+    }
+    
+    .hero {
+        max-width: 98vw;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    /* Додаткові анімації */
+    @keyframes rippleEffect {
+        0% {
+            transform: scale(0) rotate(0deg);
+            opacity: 1;
+        }
+        25% {
+            transform: scale(1) rotate(90deg);
+            opacity: 0.8;
+        }
+        50% {
+            transform: scale(3) rotate(180deg);
+            opacity: 0.6;
+        }
+        75% {
+            transform: scale(5) rotate(270deg);
+            opacity: 0.3;
+        }
+        100% {
+            transform: scale(8) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Анімація згинання листка */
+    @keyframes foldPaper {
+        0% {
+            transform: perspective(2000px) rotateY(0deg) translateX(0px) scale(1);
+            opacity: 1;
+            background: #ffffff;
+        }
+        20% {
+            transform: perspective(2000px) rotateY(-30deg) translateX(100px) scale(0.95);
+            opacity: 0.9;
+            background: #f8f8f8;
+        }
+        40% {
+            transform: perspective(2000px) rotateY(-60deg) translateX(200px) scale(0.9);
+            opacity: 0.8;
+            background: #f0f0f0;
+        }
+        60% {
+            transform: perspective(2000px) rotateY(-90deg) translateX(300px) scale(0.85);
+            opacity: 0.7;
+            background: #e8e8e8;
+        }
+        80% {
+            transform: perspective(2000px) rotateY(-120deg) translateX(400px) scale(0.8);
+            opacity: 0.6;
+            background: #e0e0e0;
+        }
+        100% {
+            transform: perspective(2000px) rotateY(-150deg) translateX(500px) scale(0.7);
+            opacity: 0.5;
+            background: #d8d8d8;
+        }
+    }
+
+        /* Анімація розгинання листка */
+    @keyframes unfoldPaper {
+        0% {
+            transform: perspective(2000px) rotateY(-150deg) translateX(500px) scale(0.7);
+            opacity: 0.5;
+            background: #d8d8d8;
+        }
+        20% {
+            transform: perspective(2000px) rotateY(-120deg) translateX(400px) scale(0.8);
+            opacity: 0.6;
+            background: #e0e0e0;
+        }
+        40% {
+            transform: perspective(2000px) rotateY(-90deg) translateX(300px) scale(0.85);
+            opacity: 0.7;
+            background: #e8e8e8;
+        }
+        60% {
+            transform: perspective(2000px) rotateY(-60deg) translateX(200px) scale(0.9);
+            opacity: 0.8;
+            background: #f0f0f0;
+        }
+        80% {
+            transform: perspective(2000px) rotateY(-30deg) translateX(100px) scale(0.95);
+            opacity: 0.9;
+            background: #f8f8f8;
+        }
+        100% {
+            transform: perspective(2000px) rotateY(0deg) translateX(0px) scale(1);
+            opacity: 1;
+            background: #ffffff;
+        }
+    }
+
+     /* Анімація світіння */
+     @keyframes glowEffect {
+         0% {
+             opacity: 0;
+         }
+         50% {
+             opacity: 1;
+         }
+         100% {
+             opacity: 0;
+         }
+     }
+
+     /* Анімація рухомого кордону */
+     @keyframes moveBorder {
+         0% {
+             transform: translateX(0) translateY(0) scaleY(0);
+             opacity: 1;
+         }
+         25% {
+             transform: translateX(25vw) translateY(25vh) scaleY(1);
+             opacity: 0.8;
+         }
+         50% {
+             transform: translateX(50vw) translateY(50vh) scaleY(1);
+             opacity: 0.6;
+         }
+         75% {
+             transform: translateX(75vw) translateY(75vh) scaleY(1);
+             opacity: 0.4;
+         }
+         100% {
+             transform: translateX(100vw) translateY(100vh) scaleY(0);
+             opacity: 0;
+         }
+     }
+
+    /* Покращення анімації перелистування вперед */
+    .page.flipped-forward::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(128, 128, 0, 0.3) 0%, transparent 30%, rgba(0, 0, 0, 0.15) 100%);
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+    }
+
+    /* Покращення анімації перелистування назад */
+    .page.flipped-backward::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(128, 128, 0, 0.3) 0%, transparent 30%, rgba(0, 0, 0, 0.15) 100%);
+        opacity: 1;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+    }
+
+    /* Тінь для сторінок перелистаних вперед */
+    .page.flipped-forward::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset -20px -20px 60px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        transition: opacity 1.8s ease;
+        pointer-events: none;
+    }
+
+    /* Тінь для сторінок перелистаних назад */
+    .page.flipped-backward::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 20px 20px 60px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        transition: opacity 1.8s ease;
+        pointer-events: none;
+    }
+
+    /* Старі стилі для сумісності */
+    .page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, transparent 0%, rgba(128, 128, 0, 0.1) 50%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .page.flipped::before {
+        opacity: 0.5;
+    }
+
+    .page::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transition: opacity 1.5s ease;
+        pointer-events: none;
+    }
+
+    .page.flipped::after {
+        opacity: 1;
+    }
+
+/* Стилі для page-flip бібліотеки - повноекранний режим з перелистуванням з кутка */
+.stf__wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.stf__parent {
+    position: relative;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.stf__item {
+    background: #ffffff;
+    border: none;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Покращені стилі для перелистування з правого верхнього кутка */
+.stf__block {
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.15);
+    transform-origin: top right;
+}
+
+.stf__block--left {
+    box-shadow: inset -10px 0 40px rgba(0, 0, 0, 0.2);
+    transform-origin: top right;
+}
+
+.stf__block--right {
+    box-shadow: inset 10px 0 40px rgba(0, 0, 0, 0.2);
+    transform-origin: top right;
+}
+
+/* Спеціальні стилі для анімації з кутка */
+.stf__block--flipping {
+    transform-origin: top right !important;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stf__block--flipping .stf__item {
+    transform-origin: top right !important;
+}
+
+/* Покращений ефект перегортування */
+.stf__item {
+    position: relative;
+    overflow: visible !important;
+}
+
+.stf__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-top: 40px solid rgba(128, 128, 0, 0.1);
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform-origin: top right;
+    z-index: 10;
+}
+
+/* Стилі для кутової області перелистування */
+.stf__corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(128, 128, 0, 0.1), transparent);
+    border-radius: 0 0 0 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.stf__item:hover .stf__corner {
+    opacity: 1;
+}
+
+/* Покращений ефект для кутового перелистування */
+.page-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-top: 30px solid rgba(128, 128, 0, 0.05);
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 99;
+}
+
+.page-wrapper:hover::before {
+    opacity: 1;
+    border-left-width: 50px;
+    border-top-width: 50px;
+}
+
+/* Анімація для кутового hover ефекту */
+@keyframes cornerPeek {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-5px, 5px) rotate(-2deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-10px, 10px) rotate(-5deg);
+        opacity: 1;
+    }
+}
+
+.page-wrapper:hover::before {
+    animation: cornerPeek 0.3s ease-out forwards;
+}
+
+/* Анімація кутка при скролі */
+.corner-scroll-effect {
+    animation: cornerScrollLift 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes cornerScrollLift {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
+        opacity: 0;
+        box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+    }
+    25% {
+        transform: perspective(1000px) rotateX(-5deg) rotateY(-10deg) translateZ(10px);
+        opacity: 0.7;
+        box-shadow: -10px 10px 25px rgba(0,0,0,0.2);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(-10deg) rotateY(-20deg) translateZ(20px);
+        opacity: 0.9;
+        box-shadow: -15px 15px 35px rgba(0,0,0,0.3);
+    }
+    75% {
+        transform: perspective(1000px) rotateX(-15deg) rotateY(-30deg) translateZ(30px);
+        opacity: 1;
+        box-shadow: -20px 20px 45px rgba(0,0,0,0.4);
+    }
+    100% {
+        transform: perspective(1000px) rotateX(-20deg) rotateY(-40deg) translateZ(40px);
+        opacity: 0.8;
+        box-shadow: -25px 25px 55px rgba(0,0,0,0.5);
+    }
+}
+
+/* Ефект тіні при перегортанні */
+.page-flip-shadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(135deg, transparent 30%, rgba(0,0,0,0.1) 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.page-flipping .page-flip-shadow {
+    opacity: 1;
+}
+
+/* Стилі для hover зон */
+.hover-zone {
+    transition: all 0.3s ease;
+}
+
+.hover-zone:hover {
+    background: linear-gradient(to right, rgba(128, 128, 0, 0.15), transparent) !important;
+}
+
+/* Утилітні класи для налагодження */
+.debug-border {
+    border: 2px solid red !important;
+}
+
+.no-overflow {
+    overflow: hidden !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+}
