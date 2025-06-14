@@ -61,7 +61,7 @@ html, body {
 /* Ефект перегортування сторінки вперед - згортання як календар */
 .page-flipping {
     z-index: 100 !important;
-    transform-origin: center left;
+    transform-origin: left center;
     position: absolute;
     animation: realPageFlip 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     box-shadow: 
@@ -80,7 +80,7 @@ html, body {
 /* Ефект перегортування сторінки назад - згортання як календар */
 .page-flipping-back {
     z-index: 100 !important;
-    transform-origin: center left;
+    transform-origin: left center;
     position: absolute;
     animation: realPageFlipBack 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     box-shadow: 
@@ -108,7 +108,7 @@ html, body {
         linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.8) 30%, rgba(220,220,220,0.7) 60%, rgba(200,200,200,0.6) 100%),
         repeating-linear-gradient(90deg, transparent 0px, rgba(128,128,0,0.05) 2px, transparent 4px);
     z-index: 1;
-    transform-origin: center left;
+    transform-origin: left center;
     animation: calendarFold 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     border: 2px solid rgba(128, 128, 0, 0.2);
     border-radius: 8px;
@@ -129,7 +129,7 @@ html, body {
         linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.8) 30%, rgba(220,220,220,0.7) 60%, rgba(200,200,200,0.6) 100%),
         repeating-linear-gradient(90deg, transparent 0px, rgba(128,128,0,0.05) 2px, transparent 4px);
     z-index: 1;
-    transform-origin: center left;
+    transform-origin: left center;
     animation: calendarFoldBack 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     border: 2px solid rgba(128, 128, 0, 0.2);
     border-radius: 8px;
@@ -274,134 +274,134 @@ html, body {
 
 
 
-/* Анімація згортання сторінки як у календарі (вперед) - реалістичне складання */
+/* Анімація згортання сторінки як у календарі (вперед) - лівий край зафіксований */
 @keyframes realPageFlip {
     0% {
-        transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scaleY(1) scaleX(1) translateZ(0px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scaleY(1) scaleX(1);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     10% {
-        transform: perspective(1500px) rotateY(8deg) rotateX(-2deg) scaleY(0.98) scaleX(0.99) translateZ(15px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(8deg) rotateX(-2deg) scaleY(0.98) scaleX(0.99);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 98% 0%, 99% 2%, 100% 5%, 100% 100%, 0% 100%);
         filter: brightness(0.95) contrast(1.05) blur(0.2px);
         opacity: 0.95;
     }
     
     25% {
-        transform: perspective(1500px) rotateY(25deg) rotateX(-5deg) scaleY(0.92) scaleX(0.95) translateZ(50px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(25deg) rotateX(-5deg) scaleY(0.92) scaleX(0.95);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 90% 0%, 95% 8%, 98% 15%, 100% 25%, 100% 100%, 0% 100%);
         filter: brightness(0.9) contrast(1.1) blur(0.5px);
         opacity: 0.85;
     }
     
     40% {
-        transform: perspective(1500px) rotateY(50deg) rotateX(-10deg) scaleY(0.8) scaleX(0.85) translateZ(100px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(50deg) rotateX(-10deg) scaleY(0.8) scaleX(0.85);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 75% 0%, 85% 15%, 92% 25%, 98% 40%, 100% 55%, 100% 100%, 0% 100%);
         filter: brightness(0.8) contrast(1.2) blur(1px);
         opacity: 0.7;
     }
     
     60% {
-        transform: perspective(1500px) rotateY(90deg) rotateX(-18deg) scaleY(0.6) scaleX(0.7) translateZ(150px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(90deg) rotateX(-18deg) scaleY(0.6) scaleX(0.7);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 50% 0%, 65% 25%, 78% 40%, 88% 60%, 95% 75%, 100% 85%, 100% 100%, 0% 100%);
         filter: brightness(0.65) contrast(1.3) blur(1.5px);
         opacity: 0.5;
     }
     
     75% {
-        transform: perspective(1500px) rotateY(130deg) rotateX(-25deg) scaleY(0.4) scaleX(0.5) translateZ(120px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(130deg) rotateX(-25deg) scaleY(0.4) scaleX(0.5);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 25% 0%, 40% 35%, 55% 55%, 70% 75%, 85% 88%, 95% 95%, 100% 98%, 100% 100%, 0% 100%);
         filter: brightness(0.5) contrast(1.4) blur(2px);
         opacity: 0.3;
     }
     
     90% {
-        transform: perspective(1500px) rotateY(165deg) rotateX(-30deg) scaleY(0.2) scaleX(0.3) translateZ(60px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(165deg) rotateX(-30deg) scaleY(0.2) scaleX(0.3);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 8% 0%, 20% 45%, 35% 65%, 50% 82%, 65% 92%, 80% 97%, 95% 99%, 100% 100%, 0% 100%);
         filter: brightness(0.3) contrast(1.5) blur(2.5px);
         opacity: 0.15;
     }
     
     100% {
-        transform: perspective(1500px) rotateY(180deg) rotateX(-35deg) scaleY(0.05) scaleX(0.1) translateZ(0px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(180deg) rotateX(-35deg) scaleY(0.05) scaleX(0.1);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
         filter: brightness(0.1) contrast(2) blur(3px);
         opacity: 0;
     }
 }
 
-/* Анімація згортання сторінки як у календарі (назад) - реверсивна до вперед */
+/* Анімація згортання сторінки як у календарі (назад) - лівий край зафіксований */
 @keyframes realPageFlipBack {
     0% {
-        transform: perspective(1500px) rotateY(180deg) rotateX(-35deg) scaleY(0.05) scaleX(0.1) translateZ(0px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(180deg) rotateX(-35deg) scaleY(0.05) scaleX(0.1);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     10% {
-        transform: perspective(1500px) rotateY(165deg) rotateX(-30deg) scaleY(0.2) scaleX(0.3) translateZ(60px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(165deg) rotateX(-30deg) scaleY(0.2) scaleX(0.3);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 8% 0%, 20% 45%, 35% 65%, 50% 82%, 65% 92%, 80% 97%, 95% 99%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     25% {
-        transform: perspective(1500px) rotateY(130deg) rotateX(-25deg) scaleY(0.4) scaleX(0.5) translateZ(120px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(130deg) rotateX(-25deg) scaleY(0.4) scaleX(0.5);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 25% 0%, 40% 35%, 55% 55%, 70% 75%, 85% 88%, 95% 95%, 100% 98%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     40% {
-        transform: perspective(1500px) rotateY(90deg) rotateX(-18deg) scaleY(0.6) scaleX(0.7) translateZ(150px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(90deg) rotateX(-18deg) scaleY(0.6) scaleX(0.7);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 50% 0%, 65% 25%, 78% 40%, 88% 60%, 95% 75%, 100% 85%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     60% {
-        transform: perspective(1500px) rotateY(50deg) rotateX(-10deg) scaleY(0.8) scaleX(0.85) translateZ(100px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(50deg) rotateX(-10deg) scaleY(0.8) scaleX(0.85);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 75% 0%, 85% 15%, 92% 25%, 98% 40%, 100% 55%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     75% {
-        transform: perspective(1500px) rotateY(25deg) rotateX(-5deg) scaleY(0.92) scaleX(0.95) translateZ(50px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(25deg) rotateX(-5deg) scaleY(0.92) scaleX(0.95);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 90% 0%, 95% 8%, 98% 15%, 100% 25%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     90% {
-        transform: perspective(1500px) rotateY(8deg) rotateX(-2deg) scaleY(0.98) scaleX(0.99) translateZ(15px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(8deg) rotateX(-2deg) scaleY(0.98) scaleX(0.99);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 98% 0%, 99% 2%, 100% 5%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
     }
     
     100% {
-        transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scaleY(1) scaleX(1) translateZ(0px);
-        transform-origin: center left;
+        transform: perspective(1500px) rotateY(0deg) rotateX(0deg) scaleY(1) scaleX(1);
+        transform-origin: left center;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         filter: brightness(1) contrast(1) blur(0px);
         opacity: 1;
