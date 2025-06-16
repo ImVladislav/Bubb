@@ -4,16 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
   var $slider = $("#stat-slider-turn");
-  var width = $slider.width();
-  var height = $slider.height();
+  var pageWidth = 320;
+  var pageHeight = 440;
+  var bookWidth = pageWidth * 2;
+  var bookHeight = pageHeight;
   $slider.turn({
-    width: width,
-    height: height,
+    width: bookWidth,
+    height: bookHeight,
     autoCenter: true,
-    display: "single",
+    display: "double",
     duration: 800,
     gradients: true,
     acceleration: false,
+  });
+
+  // Кнопки перегортання
+  $("#prev-page").on("click", function () {
+    $slider.turn("previous");
+  });
+  $("#next-page").on("click", function () {
+    $slider.turn("next");
   });
 
   // Перелистування по скролу миші
@@ -31,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Адаптивність при зміні розміру
   window.addEventListener("resize", function () {
-    var w = $slider.width();
-    var h = $slider.height();
+    var w = pageWidth * 2;
+    var h = pageHeight;
     $slider.turn("size", w, h);
   });
 
