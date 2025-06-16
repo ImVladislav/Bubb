@@ -44,13 +44,19 @@ body {
 .bubb-logo {
   width: 100%;
   /* Adjust size as needed */
-  max-width: 400px;
+  max-width: 60%;
   height: auto;
+  @media (max-width: 480px) {
+    width: 85%;
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 }
 
 .locker-room-section {
   position: relative;
-  padding: 20px;
+  padding: 20px 0;
   top: 14%;
   /* Adjust as needed */
   width: 100%;
@@ -61,7 +67,6 @@ body {
 
 .locker-room-image {
   width: 100%;
-  /* Adjust size as needed */
   max-width: 70%;
   height: auto;
 }
@@ -105,6 +110,44 @@ body {
   /* Adjust size as needed */
   width: 1000px;
   height: auto;
+
+  @media (max-width: 480px) {
+    width: 95%;
+    font-size: 0.8em;
+  }
+  @media (min-width: 768px) {
+    padding-bottom: 15%;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    font-size: 0.9em;
+    padding-bottom: 10%;
+  }
+  @media (max-width: 1040px) {
+    width: 100%;
+    font-size: 0.85em;
+  }
+  @media (min-width: 1040px) {
+    padding-bottom: 5%;
+  }
+}
+.description-image {
+  position: absolute;
+  z-index: -1;
+
+  right: 0%;
+  width: 42%;
+  @media (max-width: 480px) {
+    /* top: 20px; */
+  }
+  @media (min-width: 1200px) {
+    right: 6%;
+    width: 30%;
+  }
+  @media (min-width: 1300px) {
+    right: 10%;
+    width: 30%;
+  }
 }
 
 .clouds-section {
@@ -133,8 +176,7 @@ body {
   position: absolute;
   left: 3%;
   bottom: 53%;
-  width: 50%;
-
+  width: 53%;
 }
 
 .x-cloud {
@@ -142,16 +184,14 @@ body {
   position: absolute;
   left: 29%;
   bottom: 74%;
-  width: 50%;
-
+  width: 60%;
 }
 
 .cloud-link img {
   width: 65%;
   height: auto;
-  transition: transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-
 
 .frog-at-bottom {
   position: absolute;
@@ -203,7 +243,6 @@ body {
 }
 
 @keyframes floatCloud {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -235,7 +274,6 @@ body {
   border-radius: 5px;
   display: inline-block;
 }
-
 
 .cloud-link:hover img {
   transform: scale(1.13) rotate(-2deg);
@@ -273,15 +311,13 @@ body {
   box-shadow: none;
 }
 
-
-@media (min-width:640px) {
+@media (min-width: 640px) {
   .clouds-section {
-    height: 95vh;
+    height: 100vh;
   }
 }
 
 @media (min-width: 768px) {
-
   .send-cloud {
     bottom: 46%;
   }
@@ -293,25 +329,13 @@ body {
   .tg-cloud {
     bottom: 63%;
   }
-
-  .description-text {
-    padding-bottom: 10%;
-  }
 }
 
-
 @media (max-width: 768px) {
-  .bubb-logo {
-    width: 40%;
-  }
-
   .locker-room-image {
-    width: 80%;
-  }
-
-  .description-text {
-    width: 90%;
-    font-size: 0.9em;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5px 0 10px;
   }
 
   .clouds-section {
@@ -336,8 +360,6 @@ body {
     font-size: 0.9em;
   }
 
-
-
   .buy-section {
     top: 35%;
   }
@@ -348,21 +370,14 @@ body {
 }
 
 @media (max-width: 480px) {
-  .bubb-logo {
-    width: 60%;
-  }
-
   .locker-room-image {
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5px 0 10px;
   }
 
   .description-section {
     top: 45%;
-  }
-
-  .description-text {
-    width: 95%;
-    font-size: 0.8em;
   }
 
   .clouds-section {
@@ -404,14 +419,8 @@ body {
 }
 
 @media (max-width: 1040px) {
-  .description-text {
-    width: 95%;
-    /* max-width: 400px; */
-    font-size: 0.85em;
-  }
-
   .cloud-link img {
-    width: 75%;
+    width: 90%;
   }
 
   /* .send-cloud {
@@ -532,7 +541,6 @@ body {
 }
 
 @media (min-width: 1040px) {
-
   /* .send-cloud {
   position: absolute;
   left: 33%;
@@ -562,7 +570,7 @@ body {
 
 @media (min-width: 1200px) {
   .clouds-section {
-    height: 120vh;
+    height: 130vh;
   }
 
   .send-cloud {
@@ -579,8 +587,6 @@ body {
 }
 
 @media (min-width: 1440px) {
-
-
   .send-cloud {
     bottom: 54%;
   }
@@ -590,6 +596,6 @@ body {
   }
 
   .x-cloud {
-    bottom: 84%;
+    bottom: 78%;
   }
 }
