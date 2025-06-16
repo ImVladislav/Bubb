@@ -4,40 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUGG</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+    <title>Bubb Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <div class="main-art">
-            <img src="image/logo.png" alt="CUGG" class="main-image">
+    <div class="container">
+        <div class="header">
+            <img src="assets/c1.png" alt="Bubb Logo" class="bubb-logo">
         </div>
-        <div class="stat-slider-turn" id="stat-slider-turn">
-            <div class="stat-page page"></div>
-            <div class="stat-page page double-image-page left-half"><img src="image/v1.png" class="slider-img double-img" alt="stat1"></div>
-            <div class="stat-page page double-image-page right-half"><img src="image/v2.png" class="slider-img double-img" alt="stat1"></div>
-            <div class="stat-page page"><img src="image/v3.png" class="slider-img" alt="stat2"></div>
-            <div class="stat-page page"><img src="image/v4.png" class="slider-img" alt="stat3"></div>
-                        <div class="stat-page page"><img src="image/v5.png" class="slider-img" alt="stat3"></div>
-
-                                    <div class="stat-page page"><img src="image/v6.png" class="slider-img" alt="stat3"></div>
-
-            <div class="stat-page page"></div>
+        <div class="locker-room-section">
+            <img src="assets/c11.png" alt="Locker Room" class="locker-room-image">
         </div>
-        <button id="prev-page" class="page-btn" aria-label="Попередня сторінка">&#8592;</button>
-        <button id="next-page" class="page-btn" aria-label="Наступна сторінка">&#8594;</button>
-        <a href="#" class="contract"><img src="image/contact.png" alt="contact"></a>
+        <div class="buy-section">
+            <div class="buy-container" id="buyButton">
+                <img src="assets/c9.png" alt="BUY Cloud" class="buy-image">
+                <div class="contract-overlay">
+                    <p class="contract-text">0xAbCd1234Ef5678909876AbCd1234Ef5678901234</p>
+                </div>
+            </div>
+        </div>
+        <div class="description-section">
+            <img src="assets/c10.png" alt="Description Text" class="description-text">
+        </div>
+        <div class="clouds-section">
+            <a href="#" class="cloud-link send-cloud">
+                <img src="assets/g2.png" alt="Send Cloud">
+            </a>
+            <a href="#" class="cloud-link x-cloud">
+                <img src="assets/g1.png" alt="X Cloud">
+            </a>
+            <a href="#" class="cloud-link x-cloud">
+                <img src="assets/g3.png" alt="X Cloud">
+            </a>
+        </div>
 
-        <div class="socials">
-            <a href="#" class="social-icon"><img src="image/social1.png" alt="X"></a>
-            <a href="#" class="social-icon"><img src="image/social2.png" alt="Medium"></a>
-            <a href="#" class="social-icon"><img src="image/social3.png" alt="Dextools"></a>
-            <a href="#" class="social-icon"><img src="image/social4.png" alt="Telegram"></a>
+        <div class="frog-at-bottom">
+            <img src="assets/c8.png" alt="Frog at bottom" class="frog-bottom-image">
         </div>
     </div>
+
+    <!-- Contract Modal -->
+    <div id="contractModal" class="modal">
+        <div class="modal-content">
+            <h2>Contract Copied!</h2>
+            <div class="contract-content">
+                <p>The contract has been successfully copied to your clipboard.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
