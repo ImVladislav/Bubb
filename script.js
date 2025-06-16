@@ -1,80 +1,60 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const book = document.getElementById('book');
-    
-    // Перевіряємо, чи завантажилися бібліотеки
-    if (typeof jQuery === 'undefined' || typeof $.fn.turn === 'undefined') {
-        console.error('Required libraries not loaded!');
-        return;
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof jQuery === "undefined" || typeof $.fn.turn === "undefined") {
+    console.error("Required libraries not loaded!");
+    return;
+  }
+  var $slider = $("#stat-slider-turn");
+  var width = $slider.width();
+  var height = $slider.height();
+  $slider.turn({
+    width: width,
+    height: height,
+    autoCenter: true,
+    display: "single",
+    duration: 800,
+    gradients: true,
+    acceleration: false,
+  });
 
-    // Ініціалізуємо turn.js
-    $(book).turn({
-        width: book.offsetWidth || 600,
-        height: book.offsetHeight || 800,
-        autoCenter: true,
-        duration: 4000,
-        gradients: true,
-        acceleration: false,
-        elevation: 50,
-        display: 'single',
-        when: {
-            turning: function(e, page, view) {
-                // Додаткова логіка при перегортанні, якщо потрібно
-            }
-        }
+  // Перелистування по скролу миші
+  $slider[0].addEventListener(
+    "wheel",
+    function (e) {
+      if (e.deltaY > 0) {
+        $slider.turn("next");
+      } else if (e.deltaY < 0) {
+        $slider.turn("previous");
+      }
+    },
+    { passive: true }
+  );
+
+  // Адаптивність при зміні розміру
+  window.addEventListener("resize", function () {
+    var w = $slider.width();
+    var h = $slider.height();
+    $slider.turn("size", w, h);
+  });
+
+  // --- Анімація натискання для іконок соцмереж ---
+  document.querySelectorAll(".social-icon").forEach(function (btn) {
+    btn.addEventListener("mousedown", function () {
+      btn.classList.add("pressed");
     });
-
-    // Обробка прокрутки колеса миші
-    window.addEventListener('wheel', (e) => {
-        if (e.deltaY > 0) {
-            $(book).turn('next');
-        } else if (e.deltaY < 0) {
-            $(book).turn('previous');
-        }
-    }, { passive: true });
-
-    // Додаємо обробники для кнопок навігації
-    document.querySelectorAll('.nav-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const action = button.getAttribute('data-action');
-            switch(action) {
-                case 'prev':
-                    $(book).turn('previous');
-                    break;
-                case 'next':
-                    $(book).turn('next');
-                    break;
-            }
-        });
+    btn.addEventListener("touchstart", function () {
+      btn.classList.add("pressed");
     });
-
-    // Додаємо обробник для свайпів на мобільних пристроях
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    document.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, false);
-
-    document.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, false);
-
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) {
-            // Свайп вліво - наступна сторінка
-            $(book).turn('next');
-        }
-        if (touchEndX > touchStartX + swipeThreshold) {
-            // Свайп вправо - попередня сторінка
-            $(book).turn('previous');
-        }
-    }
-
-    // Адаптивність при зміні розміру вікна
-    window.addEventListener('resize', () => {
-        $(book).turn('size', book.offsetWidth, book.offsetHeight);
+    btn.addEventListener("mouseup", function () {
+      btn.classList.remove("pressed");
     });
+    btn.addEventListener("mouseleave", function () {
+      btn.classList.remove("pressed");
+    });
+    btn.addEventListener("touchend", function () {
+      btn.classList.remove("pressed");
+    });
+    btn.addEventListener("touchcancel", function () {
+      btn.classList.remove("pressed");
+    });
+  });
 });

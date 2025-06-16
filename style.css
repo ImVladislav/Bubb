@@ -1,978 +1,150 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-    background: #18181b;
-    color: #222;
-}
-
-#book .page, #book .hard {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    border-radius: 0;
-    box-shadow: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: absolute;
-    top: 0; left: 0;
-}
-
-#book .hard:first-child {
-    background: linear-gradient(135deg, #4f8cff 0%, #a770ef 100%);
-    color: #fff;
-}
-#book .page:nth-of-type(2) {
-    background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%) !important;
-    color: #222;
-}
-#book .page:nth-of-type(3) {
-    background: linear-gradient(135deg, #fcb69f 0%, #ffecd2 100%) !important;
-    color: #222;
-}
-#book .page:nth-of-type(4) {
-    background: linear-gradient(135deg, #ffb199 0%, #ff0844 100%) !important;
-    color: #fff;
-}
-#book .page:nth-of-type(5) {
-    background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%) !important;
-    color: #fff;
-}
-#book .page:nth-of-type(6) {
-    background: linear-gradient(135deg, #ffaf7b 0%, #d76d77 100%) !important;
-    color: #fff;
-}
-
-.page-content {
-    width: 100%;
-    height: 100%;
-    padding: 48px 32px 32px 32px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: none !important;
-}
-
-.logo {
-    font-size: 3.5em;
-    font-weight: 900;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-    background: linear-gradient(90deg, #fff 30%, #a770ef 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 8px rgba(80,80,255,0.12);
-}
-
-.tagline {
-    font-size: 1.3em;
-    margin-bottom: 32px;
-    color: #e0e0e0;
-    font-weight: 500;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-
-.stats {
-    display: flex;
-    gap: 32px;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-}
-.stat-item {
-    background: rgba(255,255,255,0.18);
-    border-radius: 12px;
-    padding: 16px 20px;
-    min-width: 110px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.stat-value {
-    font-size: 1.3em;
-    font-weight: 700;
-    color: #fff;
-}
-.stat-label {
-    color: #e0e0e0;
-    font-size: 0.95em;
-    margin-top: 4px;
-}
-
-.social-links {
-    display: flex;
-    gap: 18px;
-    margin-top: 12px;
-}
-.social-link {
-    color: #fff;
-    background: rgba(80,80,255,0.18);
-    text-decoration: none;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-.social-link:hover {
-    background: #fff;
-    color: #4f8cff;
-}
-
-.features {
-    width: 100%;
-    padding: 0 0 12px 0;
-}
-.features h2 {
-    text-align: center;
-    margin-bottom: 28px;
-    font-size: 2em;
-    font-weight: 800;
-    color: #4f8cff;
-    letter-spacing: 1px;
-}
-.feature-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-.feature-item {
-    background: rgba(255,255,255,0.7);
-    border-radius: 10px;
-    padding: 18px 12px;
-    text-align: center;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    font-size: 1em;
-    font-weight: 500;
-    color: #333;
-    transition: background 0.2s;
-}
-.feature-item h3 {
-    margin-bottom: 8px;
-    color: #4f8cff;
-    font-size: 1.1em;
-    font-weight: 700;
-}
-.feature-item p {
-    color: #444;
-    font-size: 0.98em;
-}
-
-.contact-purchase {
-    width: 100%;
-    text-align: center;
-}
-.contact-purchase h2 {
-    margin-bottom: 28px;
-    font-size: 2em;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 8px rgba(255,0,80,0.12);
-}
-.purchase-options {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    max-width: 420px;
-    margin: 0 auto;
-}
-.purchase-option {
-    background: rgba(255,255,255,0.7);
-    border-radius: 10px;
-    padding: 18px 12px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
-.purchase-button {
-    display: inline-block;
-    padding: 10px 30px;
-    background: linear-gradient(90deg, #ffb199 0%, #ff0844 100%);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    margin-top: 16px;
-    font-weight: 600;
-    font-size: 1.1em;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 8px rgba(255,0,80,0.08);
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.purchase-button:hover {
-    background: #fff;
-    color: #ff0844;
-    box-shadow: 0 4px 16px rgba(255,0,80,0.18);
-}
-.community-links {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 12px;
-}
-.community-link {
-    color: #ff0844;
-    background: #fff;
-    text-decoration: none;
-    padding: 8px 18px;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-}
-.community-link:hover {
-    background: #ff0844;
-    color: #fff;
-}
-
-.navigation {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 24px;
-    z-index: 1000;
-}
-.nav-button {
-    padding: 12px 32px;
-    background: linear-gradient(90deg, #4f8cff 0%, #a770ef 100%);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    box-shadow: 0 2px 8px rgba(80,80,255,0.08);
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-.nav-button:hover {
-    background: #fff;
-    color: #4f8cff;
-    box-shadow: 0 4px 16px rgba(80,80,255,0.18);
-}
-
-@media (max-width: 900px) {
-    #book .hard, #book .page {
-        min-width: 90vw;
-        max-width: 98vw;
-        min-height: 320px;
-        max-height: 80vh;
-    }
-    .page-content {
-        padding: 24px 8px;
-    }
-}
-@media (max-width: 600px) {
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-    .stats {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .social-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .purchase-options {
-        gap: 12px;
-    }
-}
-
-    /* Додаткові анімації */
-    @keyframes rippleEffect {
-        0% {
-            transform: scale(0) rotate(0deg);
-            opacity: 1;
-        }
-        25% {
-            transform: scale(1) rotate(90deg);
-            opacity: 0.8;
-        }
-        50% {
-            transform: scale(3) rotate(180deg);
-            opacity: 0.6;
-        }
-        75% {
-            transform: scale(5) rotate(270deg);
-            opacity: 0.3;
-        }
-        100% {
-            transform: scale(8) rotate(360deg);
-            opacity: 0;
-        }
-    }
-
-    /* Анімація згинання листка */
-    @keyframes foldPaper {
-        0% {
-            transform: perspective(2000px) rotateY(0deg) translateX(0px) scale(1);
-            opacity: 1;
-            background: #ffffff;
-        }
-        20% {
-            transform: perspective(2000px) rotateY(-30deg) translateX(100px) scale(0.95);
-            opacity: 0.9;
-            background: #f8f8f8;
-        }
-        40% {
-            transform: perspective(2000px) rotateY(-60deg) translateX(200px) scale(0.9);
-            opacity: 0.8;
-            background: #f0f0f0;
-        }
-        60% {
-            transform: perspective(2000px) rotateY(-90deg) translateX(300px) scale(0.85);
-            opacity: 0.7;
-            background: #e8e8e8;
-        }
-        80% {
-            transform: perspective(2000px) rotateY(-120deg) translateX(400px) scale(0.8);
-            opacity: 0.6;
-            background: #e0e0e0;
-        }
-        100% {
-            transform: perspective(2000px) rotateY(-150deg) translateX(500px) scale(0.7);
-            opacity: 0.5;
-            background: #d8d8d8;
-        }
-    }
-
-        /* Анімація розгинання листка */
-    @keyframes unfoldPaper {
-        0% {
-            transform: perspective(2000px) rotateY(-150deg) translateX(500px) scale(0.7);
-            opacity: 0.5;
-            background: #d8d8d8;
-        }
-        20% {
-            transform: perspective(2000px) rotateY(-120deg) translateX(400px) scale(0.8);
-            opacity: 0.6;
-            background: #e0e0e0;
-        }
-        40% {
-            transform: perspective(2000px) rotateY(-90deg) translateX(300px) scale(0.85);
-            opacity: 0.7;
-            background: #e8e8e8;
-        }
-        60% {
-            transform: perspective(2000px) rotateY(-60deg) translateX(200px) scale(0.9);
-            opacity: 0.8;
-            background: #f0f0f0;
-        }
-        80% {
-            transform: perspective(2000px) rotateY(-30deg) translateX(100px) scale(0.95);
-            opacity: 0.9;
-            background: #f8f8f8;
-        }
-        100% {
-            transform: perspective(2000px) rotateY(0deg) translateX(0px) scale(1);
-            opacity: 1;
-            background: #ffffff;
-        }
-    }
-
-     /* Анімація світіння */
-     @keyframes glowEffect {
-         0% {
-             opacity: 0;
-         }
-         50% {
-             opacity: 1;
-         }
-         100% {
-             opacity: 0;
-         }
-     }
-
-     /* Анімація рухомого кордону */
-     @keyframes moveBorder {
-         0% {
-             transform: translateX(0) translateY(0) scaleY(0);
-             opacity: 1;
-         }
-         25% {
-             transform: translateX(25vw) translateY(25vh) scaleY(1);
-             opacity: 0.8;
-         }
-         50% {
-             transform: translateX(50vw) translateY(50vh) scaleY(1);
-             opacity: 0.6;
-         }
-         75% {
-             transform: translateX(75vw) translateY(75vh) scaleY(1);
-             opacity: 0.4;
-         }
-         100% {
-             transform: translateX(100vw) translateY(100vh) scaleY(0);
-             opacity: 0;
-         }
-     }
-
-    /* Покращення анімації перелистування вперед */
-    .page.flipped-forward::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(128, 128, 0, 0.3) 0%, transparent 30%, rgba(0, 0, 0, 0.15) 100%);
-        opacity: 1;
-        transition: opacity 0.6s ease;
-        pointer-events: none;
-    }
-
-    /* Покращення анімації перелистування назад */
-    .page.flipped-backward::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, rgba(128, 128, 0, 0.3) 0%, transparent 30%, rgba(0, 0, 0, 0.15) 100%);
-        opacity: 1;
-        transition: opacity 0.6s ease;
-        pointer-events: none;
-    }
-
-    /* Тінь для сторінок перелистаних вперед */
-    .page.flipped-forward::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        box-shadow: inset -20px -20px 60px rgba(0, 0, 0, 0.2);
-        opacity: 1;
-        transition: opacity 1.8s ease;
-        pointer-events: none;
-    }
-
-    /* Тінь для сторінок перелистаних назад */
-    .page.flipped-backward::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        box-shadow: inset 20px 20px 60px rgba(0, 0, 0, 0.2);
-        opacity: 1;
-        transition: opacity 1.8s ease;
-        pointer-events: none;
-    }
-
-    /* Старі стилі для сумісності */
-    .page::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, transparent 0%, rgba(128, 128, 0, 0.1) 50%, transparent 100%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-
-    .page.flipped::before {
-        opacity: 0.5;
-    }
-
-    .page::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transition: opacity 1.5s ease;
-        pointer-events: none;
-    }
-
-    .page.flipped::after {
-        opacity: 1;
-    }
-
-/* Стилі для page-flip бібліотеки - повноекранний режим з перелистуванням з кутка */
-.stf__wrapper {
-    margin: 0;
-    padding: 0;
-    width: 100vw !important;
-    height: 100vh !important;
-    box-shadow: none;
-    border-radius: 0;
-    overflow: hidden;
-}
-
-.stf__parent {
-    position: relative;
-    width: 100vw !important;
-    height: 100vh !important;
-    border-radius: 0;
-    overflow: hidden;
-}
-
-.stf__item {
-    background: #ffffff;
-    border: none;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Покращені стилі для перелистування з правого верхнього кутка */
-.stf__block {
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.15);
-    transform-origin: top right;
-}
-
-.stf__block--left {
-    box-shadow: inset -10px 0 40px rgba(0, 0, 0, 0.2);
-    transform-origin: top right;
-}
-
-.stf__block--right {
-    box-shadow: inset 10px 0 40px rgba(0, 0, 0, 0.2);
-    transform-origin: top right;
-}
-
-/* Спеціальні стилі для анімації з кутка */
-.stf__block--flipping {
-    transform-origin: top right !important;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
-    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.stf__block--flipping .stf__item {
-    transform-origin: top right !important;
-}
-
-/* Покращений ефект перегортування */
-.stf__item {
-    position: relative;
-    overflow: visible !important;
-}
-
-.stf__item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-top: 40px solid rgba(128, 128, 0, 0.1);
-    opacity: 0;
-    transition: all 0.5s ease;
-    transform-origin: top right;
-    z-index: 10;
-}
-
-/* Стилі для кутової області перелистування */
-.stf__corner {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, rgba(128, 128, 0, 0.1), transparent);
-    border-radius: 0 0 0 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.stf__item:hover .stf__corner {
-    opacity: 1;
-}
-
-/* Покращений ефект для кутового перелистування */
-.page-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-top: 30px solid rgba(128, 128, 0, 0.05);
-    opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
-    z-index: 99;
-}
-
-.page-wrapper:hover::before {
-    opacity: 1;
-    border-left-width: 50px;
-    border-top-width: 50px;
-}
-
-/* Анімація для кутового hover ефекту */
-@keyframes cornerPeek {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    50% {
-        transform: translate(-5px, 5px) rotate(-2deg);
-        opacity: 0.8;
-    }
-    100% {
-        transform: translate(-10px, 10px) rotate(-5deg);
-        opacity: 1;
-    }
-}
-
-.page-wrapper:hover::before {
-    animation: cornerPeek 0.3s ease-out forwards;
-}
-
-/* Анімація кутка при скролі */
-.corner-scroll-effect {
-    animation: cornerScrollLift 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes cornerScrollLift {
-    0% {
-        transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px);
-        opacity: 0;
-        box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
-    }
-    25% {
-        transform: perspective(1000px) rotateX(-5deg) rotateY(-10deg) translateZ(10px);
-        opacity: 0.7;
-        box-shadow: -10px 10px 25px rgba(0,0,0,0.2);
-    }
-    50% {
-        transform: perspective(1000px) rotateX(-10deg) rotateY(-20deg) translateZ(20px);
-        opacity: 0.9;
-        box-shadow: -15px 15px 35px rgba(0,0,0,0.3);
-    }
-    75% {
-        transform: perspective(1000px) rotateX(-15deg) rotateY(-30deg) translateZ(30px);
-        opacity: 1;
-        box-shadow: -20px 20px 45px rgba(0,0,0,0.4);
-    }
-    100% {
-        transform: perspective(1000px) rotateX(-20deg) rotateY(-40deg) translateZ(40px);
-        opacity: 0.8;
-        box-shadow: -25px 25px 55px rgba(0,0,0,0.5);
-    }
-}
-
-/* Ефект тіні при перегортанні */
-.page-flip-shadow {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(135deg, transparent 30%, rgba(0,0,0,0.1) 70%);
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    pointer-events: none;
-    z-index: 5;
-}
-
-.page-flipping .page-flip-shadow {
-    opacity: 1;
-}
-
-/* Стилі для hover зон */
-.hover-zone {
-    transition: all 0.3s ease;
-}
-
-.hover-zone:hover {
-    background: linear-gradient(to right, rgba(128, 128, 0, 0.15), transparent) !important;
-}
-
-/* Утилітні класи для налагодження */
-.debug-border {
-    border: 2px solid red !important;
-}
-
-.no-overflow {
-    overflow: hidden !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
-}
-
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #000;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
+  background: #181818;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#book {
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: #232323;
+}
+
+.main-art,
+.main-image,
+img[alt="CUGG Art"] {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background: transparent !important;
+}
+
+.main-art {
+  margin-bottom: 32px;
+}
+.main-image {
+  max-width: 420px;
+  width: 90vw;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.35);
+  border: 2px solid #fff2;
+}
+
+.stat-slider-turn {
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 32px;
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stat-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+.stat-page img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.contract-btn {
+  margin-bottom: 28px;
+  padding: 12px 38px;
+  background: #fff;
+  color: #232323;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.contract-btn:hover {
+  background: #232323;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.socials {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 12px;
+  box-shadow: none !important;
+  transition: all 0.15s cubic-bezier(0.4, 2, 0.6, 1);
+  padding: 0;
+  outline: none;
+}
+.social-icon img {
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+.social-icon:active,
+.social-icon:focus,
+.social-icon.pressed {
+  transform: scale(0.92);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+}
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.13);
+}
+
+@media (max-width: 600px) {
+  .main-image {
+    max-width: 98vw;
+  }
+  .stat-slider-turn {
+    height: 100vh;
+  }
+  .stat-page img {
     width: 100vw;
     height: 100vh;
-    position: relative;
-    background: #fff;
+  }
 }
 
-.hard {
-    background: #fff;
-    color: #333;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-.page {
-    background: #fff;
-    color: #333;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-.page-content {
-    padding: 20px;
-    height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-/* Стилі для навігації */
-.navigation {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-    z-index: 1000;
-}
-
-.nav-button {
-    padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.nav-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Стилі для головної сторінки */
-.main-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    text-align: center;
-}
-
-.logo {
-    font-size: 4em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.tagline {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    color: #666;
-}
-
-.stats {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-value {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #333;
-}
-
-.stat-label {
-    color: #666;
-    margin-top: 5px;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
-.social-link {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background: #333;
-    color: #fff;
-}
-
-/* Стилі для сторінки з особливостями */
-.features {
-    padding: 40px;
-}
-
-.features h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2em;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-.feature-item {
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.feature-item h3 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.feature-item p {
-    color: #666;
-}
-
-/* Стилі для сторінки контактів/покупки */
-.contact-purchase {
-    padding: 40px;
-    text-align: center;
-}
-
-.contact-purchase h2 {
-    margin-bottom: 40px;
-    font-size: 2em;
-}
-
-.purchase-options {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.purchase-option {
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-}
-
-.purchase-button {
-    display: inline-block;
-    padding: 10px 30px;
-    background: #4ecdc4;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.purchase-button:hover {
-    background: #45b7af;
-}
-
-.community-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.community-link {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.community-link:hover {
-    background: #333;
-    color: #fff;
-}
-
-/* Медіа-запити для адаптивності */
-@media (max-width: 768px) {
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .social-links {
-        flex-direction: column;
-    }
+/* Видаляю старі стилі для .slider-btn, .slider-window */
+.slider-btn,
+.slider-window {
+  display: none !important;
 }
