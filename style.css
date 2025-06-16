@@ -49,7 +49,7 @@ img[alt="CUGG Art"] {
   border-radius: 8px;
   box-shadow: 0 0 32px rgba(0,0,0,0.18);
   overflow: visible;
-  display: block;
+  display: flex;
 }
 .stat-page {
   width: 100vw;
@@ -147,8 +147,8 @@ img[alt="CUGG Art"] {
 }
 
 .page {
-  width: 320px;
-  height: 440px;
+  width: 50%;
+  height: 100%;
   background: #fff;
   box-shadow: 0 0 16px rgba(0,0,0,0.08);
   border-radius: 0;
@@ -161,7 +161,7 @@ img[alt="CUGG Art"] {
 }
 .page img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: contain;
   border-radius: 0;
 }
@@ -225,4 +225,23 @@ img[alt="CUGG Art"] {
     max-width: 50vw;
     max-height: 80vw;
   }
+}
+
+.double-image-page {
+  overflow: hidden;
+  position: relative;
+}
+.double-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+}
+.left-half .double-img {
+  left: 0;
+}
+.right-half .double-img {
+  left: -100%;
 }
