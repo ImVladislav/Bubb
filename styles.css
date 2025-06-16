@@ -7,7 +7,8 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
   background-color: #000;
   background: url("assets/bg.png") no-repeat center center fixed;
   background-size: cover;
@@ -20,12 +21,14 @@ body {
 .container {
   position: relative;
   width: 100vw;
-  min-height: 100vh; /* Use min-height instead of height */
+  min-height: 100vh;
+  /* Use min-height instead of height */
   overflow: hidden;
 }
 
 .background-image {
-  display: none; /* Hide the background-image rule */
+  display: none;
+  /* Hide the background-image rule */
 }
 
 .header {
@@ -39,7 +42,8 @@ body {
 }
 
 .bubb-logo {
-  width: 100%; /* Adjust size as needed */
+  width: 100%;
+  /* Adjust size as needed */
   max-width: 400px;
   height: auto;
 }
@@ -47,7 +51,8 @@ body {
 .locker-room-section {
   position: relative;
   padding: 20px;
-  top: 14%; /* Adjust as needed */
+  top: 14%;
+  /* Adjust as needed */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -55,8 +60,9 @@ body {
 }
 
 .locker-room-image {
-  width: 100%; /* Adjust size as needed */
-  max-width: 620px;
+  width: 100%;
+  /* Adjust size as needed */
+  max-width: 70%;
   height: auto;
 }
 
@@ -72,7 +78,8 @@ body {
 }
 
 .buy-link img {
-  width: 400px; /* Adjust size as needed */
+  width: 400px;
+  /* Adjust size as needed */
   height: auto;
   transition: transform 0.3s ease;
 }
@@ -84,7 +91,8 @@ body {
 .description-section {
   position: relative;
   padding-top: 60px;
-  top: 100%; /* Adjust as needed */
+  top: 100%;
+  /* Adjust as needed */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -93,7 +101,8 @@ body {
 }
 
 .description-text {
-  width: 100%; /* Adjust size as needed */
+  width: 100%;
+  /* Adjust size as needed */
   width: 1000px;
   height: auto;
 }
@@ -101,54 +110,61 @@ body {
 .clouds-section {
   position: relative;
   /* padding-top: 150px; */
-  left: 0; /* Adjust as needed */
+  left: 0;
+  /* Adjust as needed */
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
-  gap: 50px; /* Space between clouds */
+  gap: 50px;
+  /* Space between clouds */
   z-index: 2;
 }
+
 .send-cloud {
   position: absolute;
   left: 33%;
-  top: 13%;
+  bottom: 36%;
   width: 50%;
 }
-.tg-cloud{
+
+.tg-cloud {
   width: 100px;
   position: absolute;
   left: 3%;
-  top: 27%;
+  bottom: 53%;
   width: 50%;
 
 }
+
 .x-cloud {
   width: 100px;
   position: absolute;
   left: 29%;
-  top: 44%;
+  bottom: 74%;
   width: 50%;
- 
+
 }
 
 .cloud-link img {
-  width: 250px;
+  width: 65%;
   height: auto;
-  transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+  transition: transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
 
 .frog-at-bottom {
   position: absolute;
   width: 100%;
-  bottom: 0; /* Adjust as needed */
+  bottom: 0;
+  /* Adjust as needed */
   /* right: 0; Adjust as needed */
   z-index: 1;
 }
 
 .frog-bottom-image {
-  width: 100%; /* Adjust size as needed */
+  width: 100%;
+  /* Adjust size as needed */
   height: auto;
 }
 
@@ -187,10 +203,12 @@ body {
 }
 
 @keyframes floatCloud {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-12px);
   }
@@ -255,6 +273,33 @@ body {
   box-shadow: none;
 }
 
+
+@media (min-width:640px) {
+  .clouds-section {
+    height: 95vh;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .send-cloud {
+    bottom: 46%;
+  }
+
+  .x-cloud {
+    bottom: 84%;
+  }
+
+  .tg-cloud {
+    bottom: 63%;
+  }
+
+  .description-text {
+    padding-bottom: 10%;
+  }
+}
+
+
 @media (max-width: 768px) {
   .bubb-logo {
     width: 40%;
@@ -272,6 +317,7 @@ body {
   .clouds-section {
     gap: 20px;
     top: 60%;
+    /* height: 100vh; */
   }
 
   .cloud-link img {
@@ -290,11 +336,7 @@ body {
     font-size: 0.9em;
   }
 
-  /* .frog-bottom-image {
-    width: 150px;
-    bottom: 2%;
-    right: 2%;
-  } */
+
 
   .buy-section {
     top: 35%;
@@ -363,13 +405,15 @@ body {
 
 @media (max-width: 1040px) {
   .description-text {
-    width: 75%;
+    width: 95%;
     /* max-width: 400px; */
     font-size: 0.85em;
   }
+
   .cloud-link img {
-    width: 220px;
+    width: 75%;
   }
+
   /* .send-cloud {
     top: 38%;
   }
@@ -383,105 +427,169 @@ body {
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    font-family: "Comic Sans MS", cursive;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: "Comic Sans MS", cursive;
 }
 
 .modal-content {
-    background: url("assets/bg.png") no-repeat center center;
-    background-size: cover;
-    margin: 15% auto;
-    padding: 30px;
-    border: 2px solid #fff;
-    border-radius: 15px;
-    width: 80%;
-    max-width: 400px;
-    position: relative;
-    color: #fff;
-    text-align: center;
-    animation: modalFadeIn 0.3s ease-out;
+  background: url("assets/bg.png") no-repeat center center;
+  background-size: cover;
+  margin: 15% auto;
+  padding: 30px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  animation: modalFadeIn 0.3s ease-out;
 }
 
 @keyframes modalFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .close-button {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .close-button:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .contract-content {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .contract-content p {
-    font-size: 1.2em;
-    line-height: 1.4;
+  font-size: 1.2em;
+  line-height: 1.4;
 }
 
 .contract-details {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .contract-details p {
-    margin: 10px 0;
-    font-size: 1.1em;
+  margin: 10px 0;
+  font-size: 1.1em;
 }
 
 .buy-link {
-    cursor: pointer;
-    display: inline-block;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
 .buy-link:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .buy-container {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    transition: transform 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
 .buy-container:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .buy-image {
-    min-width: 380px;
+  min-width: 380px;
 
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 1040px) {
+
+  /* .send-cloud {
+  position: absolute;
+  left: 33%;
+  bottom: 36%;
+  width: 50%;
+}
+.tg-cloud{
+  width: 100px;
+  position: absolute;
+  left: 3%;
+  bottom: 53%;
+  width: 50%;
+
+}
+.x-cloud {
+  width: 100px;
+  position: absolute;
+  left: 29%;
+  bottom: 74%;
+  width: 50%;
+ 
+} */
+  .clouds-section {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .clouds-section {
+    height: 120vh;
+  }
+
+  .send-cloud {
+    bottom: 44%;
+  }
+
+  .tg-cloud {
+    bottom: 55%;
+  }
+
+  .x-cloud {
+    bottom: 74%;
+  }
+}
+
+@media (min-width: 1440px) {
+
+
+  .send-cloud {
+    bottom: 54%;
+  }
+
+  .tg-cloud {
+    bottom: 65%;
+  }
+
+  .x-cloud {
+    bottom: 84%;
+  }
 }
