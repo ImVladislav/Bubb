@@ -127,7 +127,8 @@ body {
 
 .description-section {
   position: relative;
-  /* padding-top: 4%; */
+  padding-top: 4%;
+  padding-bottom: 4%;
   top: 100%;
   /* Adjust as needed */
   width: 100%;
@@ -553,7 +554,6 @@ body {
   display: block;
 }
 
-
-.first-section{
+.first-section {
   max-height: 100vh;
 }
