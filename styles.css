@@ -127,7 +127,7 @@ body {
 
 .description-section {
   position: relative;
-  padding-top: 60px;
+  padding-top: 4%;
   top: 100%;
   /* Adjust as needed */
   width: 100%;
@@ -141,7 +141,7 @@ body {
 }
 
 .description-text {
-  width: 95%;
+  width: 90%;
   /* Adjust size as needed */
   /* width: 1000px; */
   height: auto;
@@ -190,7 +190,7 @@ body {
   left: 0;
   /* Adjust as needed */
   width: 100%;
-  height: 75vh;
+  height: 53vh;
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -209,28 +209,28 @@ body {
     /* height: 100vh; */
   }
   @media (min-width: 440px) {
-    height: 80vh;
+    height: 60vh;
   }
   @media (min-width: 768px) {
-    height: 100vh;
+    height: 80vh;
   }
 
   @media (min-width: 1040px) {
-    height: 130vh;
+    height: 80vh;
   }
   @media (min-width: 1200px) {
-    height: 130vh;
+    height: 55vh;
   }
   @media (min-width: 1400px) {
-    height: 160vh;
+    height: 90vh;
   }
 }
 
 .send-cloud {
   position: absolute;
-  left: 33%;
-  bottom: 36%;
-  width: 50%;
+  left: 30%;
+  bottom: 42%;
+  width: 40%;
   @media (min-width: 600px) {
     bottom: 45%;
     width: 40%;
@@ -255,9 +255,8 @@ body {
   /* width: 100px; */
   position: absolute;
   left: 3%;
-  bottom: 53%;
-  width: 50%;
-
+  bottom: 56%;
+  width: 45%;
   @media (min-width: 600px) {
     bottom: 60%;
     width: 40%;
@@ -279,11 +278,11 @@ body {
 }
 
 .x-cloud {
-  width: 100px;
+  /* width: 100px; */
   position: absolute;
-  left: 29%;
-  bottom: 74%;
-  width: 60%;
+  left: 30%;
+  bottom: 70%;
+  width: 50%;
   /* @media (min-width: 768px) {
     bottom: 46%;
   } */
@@ -297,7 +296,7 @@ body {
     width: 50%;
   }
   @media (min-width: 1040px) {
-    width: 50%;
+    width: 60%;
     bottom: 80%;
   }
   @media (min-width: 1200px) {
@@ -414,11 +413,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: black;
   padding: 0;
   border-radius: 0;
   font-family: "Comic Sans MS", cursive;
-  font-size: 1.2em;
+  font-size: 1.1sem;
   text-align: center;
   width: 90%;
   max-width: 350px;
@@ -429,12 +428,12 @@ body {
 .contract-text {
   margin: 0;
   word-break: break-all;
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.4;
   font-family: "Comic Sans MS", cursive;
   font-weight: bold;
-  color: #fff;
-  text-shadow: 2px 2px 0 #000, 0 0 2px #000;
+  color: black;
+  text-shadow: 2px 2px 0 white, 0 0 2px white;
   background: none;
   padding: 0;
   border-radius: 0;
@@ -545,9 +544,10 @@ body {
 }
 
 .buy-image {
-  /* min-width: 380px; */
-  width: 100%;
-  /* max-width: 600px; */
+  min-width: 360px;
+  width: 360px;
+  max-width: 1000px;
+
   height: auto;
   display: block;
 }
