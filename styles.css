@@ -93,9 +93,9 @@ body {
 
 .buy-section {
   position: relative;
-  padding-top: 15px;
+  padding-top: 2%;
   /* top: 100%; Adjust as needed, between locker room and description */
-  width: 75%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
   z-index: 2;
@@ -141,9 +141,9 @@ body {
 }
 
 .description-text {
-  width: 100%;
+  width: 95%;
   /* Adjust size as needed */
-  width: 1000px;
+  /* width: 1000px; */
   height: auto;
   @media (max-width: 480px) {
     width: 95%;
@@ -545,9 +545,9 @@ body {
 }
 
 .buy-image {
-  min-width: 380px;
+  /* min-width: 380px; */
   width: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   height: auto;
   display: block;
 }
