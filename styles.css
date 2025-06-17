@@ -203,12 +203,12 @@ body {
     gap: 15px;
     top: 55%;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 639px) {
     gap: 20px;
     top: 60%;
     /* height: 100vh; */
   }
-  @media (min-width: 640px) {
+  @media (min-width: 540px) {
     height: 120vh;
   }
 
@@ -253,7 +253,7 @@ body {
   position: absolute;
   left: 3%;
   bottom: 53%;
-  width: 53%;
+  width: 50%;
 
   @media (min-width: 600px) {
     bottom: 60%;
