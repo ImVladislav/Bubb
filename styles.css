@@ -274,7 +274,8 @@ body {
   }
 
   @media (min-width: 1200px) {
-    bottom: 55%;
+    bottom: 44%;
+    width: 53%;
   }
   @media (min-width: 1440px) {
     bottom: 54%;
