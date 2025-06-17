@@ -95,6 +95,9 @@ body {
   @media (min-width: 1040px) {
     max-width: 37%;
   }
+  @media (min-width: 1200px) {
+    max-width: 47%;
+  }
 }
 
 .buy-section {
@@ -145,6 +148,9 @@ body {
   @media (max-width: 480px) {
     top: 45%;
   }
+  @media (min-width: 1200px) {
+    padding-top: 140px;
+  }
 }
 
 .description-text {
@@ -169,11 +175,12 @@ body {
   }
   @media (min-width: 1040px) {
     padding-bottom: 5%;
+    width: 85%;
   }
 }
 .description-text--small {
   position: relative;
-  padding-top: 90px;
+  /* padding-top: 90px; */
   width: 88%;
 
   height: auto;
@@ -222,7 +229,7 @@ body {
   @media (max-width: 680px) {
     gap: 20px;
     top: 60%;
-    height: 39vh;
+    height: 50vh;
   }
   @media (min-width: 440px) {
     height: 60vh;
@@ -235,8 +242,10 @@ body {
     height: 59vh;
   }
   @media (min-width: 1200px) {
-    height: 55vh;
+    /* height: 55vh; */
+    height: 75vh;
   }
+
   @media (min-width: 1400px) {
     height: 90vh;
   }
@@ -249,7 +258,7 @@ body {
   width: 40%;
 
   @media (max-width: 680px) {
-    bottom: 50%;
+    bottom: 45%;
   }
   /* @media (min-width: 600px) {
     bottom: 45%;
@@ -295,7 +304,8 @@ body {
   }
 
   @media (min-width: 1200px) {
-    bottom: 65%;
+    bottom: 53%;
+    width: 63%;
   }
   @media (min-width: 1400px) {
     bottom: 65%;
@@ -326,7 +336,8 @@ body {
     left: 35%;
   }
   @media (min-width: 1200px) {
-    bottom: 80%;
+    bottom: 62%;
+    width: 81%;
   }
   @media (min-width: 1440px) {
     bottom: 78%;
