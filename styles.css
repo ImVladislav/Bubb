@@ -52,6 +52,12 @@ body {
   @media (max-width: 768px) {
     width: 80%;
   }
+  @media (min-width: 768px) {
+    max-width: 50%;
+  }
+  @media (min-width: 1040px) {
+    max-width: 40%;
+  }
 }
 
 .locker-room-section {
@@ -69,6 +75,20 @@ body {
   width: 100%;
   max-width: 70%;
   height: auto;
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5px 0 10px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5px 0 10px;
+  }
+
+  @media (min-width: 1040px) {
+    max-width: 50%;
+  }
 }
 
 .buy-section {
@@ -80,6 +100,12 @@ body {
   justify-content: center;
   z-index: 2;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    top: 35%;
+  }
+  @media (max-width: 480px) {
+    top: 30%;
+  }
 }
 
 .buy-link img {
@@ -87,6 +113,12 @@ body {
   /* Adjust size as needed */
   height: auto;
   transition: transform 0.3s ease;
+  @media (max-width: 768px) {
+    width: 120px;
+  }
+  @media (max-width: 480px) {
+    width: 100px;
+  }
 }
 
 .buy-link img:hover {
@@ -103,6 +135,9 @@ body {
   justify-content: center;
   text-align: center;
   z-index: 1;
+  @media (max-width: 480px) {
+    top: 45%;
+  }
 }
 
 .description-text {
@@ -110,7 +145,6 @@ body {
   /* Adjust size as needed */
   width: 1000px;
   height: auto;
-
   @media (max-width: 480px) {
     width: 95%;
     font-size: 0.8em;
@@ -131,10 +165,10 @@ body {
     padding-bottom: 5%;
   }
 }
+
 .description-image {
   position: absolute;
   z-index: -1;
-
   right: 0%;
   width: 42%;
   @media (max-width: 480px) {
@@ -162,6 +196,29 @@ body {
   gap: 50px;
   /* Space between clouds */
   z-index: 2;
+  @media (min-width: 640px) {
+    height: 100vh;
+  }
+  @media (max-width: 768px) {
+    gap: 20px;
+    top: 60%;
+    /* height: 100vh; */
+  }
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    top: 55%;
+  }
+  @media (min-width: 1040px) {
+    height: 100vh;
+  }
+  @media (min-width: 1200px) {
+    height: 130vh;
+  }
+  @media (min-width: 1400px) {
+    height: 150vh;
+  }
 }
 
 .send-cloud {
@@ -169,14 +226,42 @@ body {
   left: 33%;
   bottom: 36%;
   width: 50%;
+  @media (min-width: 768px) {
+    bottom: 55%;
+    width: 40%;
+  }
+  @media (min-width: 1040px) {
+    width: 43%;
+  }
+
+  @media (min-width: 1200px) {
+    bottom: 55%;
+  }
+  @media (min-width: 1440px) {
+    bottom: 54%;
+  }
 }
 
 .tg-cloud {
-  width: 100px;
+  /* width: 100px; */
   position: absolute;
   left: 3%;
   bottom: 53%;
   width: 53%;
+  @media (min-width: 768px) {
+    bottom: 65%;
+    width: 40%;
+  }
+  @media (min-width: 1040px) {
+    width: 43%;
+  }
+
+  @media (min-width: 1200px) {
+    bottom: 65%;
+  }
+  @media (min-width: 1400px) {
+    bottom: 65%;
+  }
 }
 
 .x-cloud {
@@ -185,12 +270,38 @@ body {
   left: 29%;
   bottom: 74%;
   width: 60%;
+  /* @media (min-width: 768px) {
+    bottom: 46%;
+  } */
+  @media (min-width: 768px) {
+    bottom: 84%;
+    width: 50%;
+  }
+  @media (min-width: 1040px) {
+    width: 50%;
+    bottom: 80%;
+  }
+  @media (min-width: 1200px) {
+    bottom: 80%;
+  }
+  @media (min-width: 1440px) {
+    bottom: 78%;
+  }
 }
 
 .cloud-link img {
   width: 65%;
   height: auto;
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  @media (max-width: 768px) {
+    width: 100px;
+  }
+  @media (max-width: 480px) {
+    width: 80px;
+  }
+  @media (max-width: 1040px) {
+    width: 90%;
+  }
 }
 
 .frog-at-bottom {
@@ -309,129 +420,12 @@ body {
   padding: 0;
   border-radius: 0;
   box-shadow: none;
-}
-
-@media (min-width: 640px) {
-  .clouds-section {
-    height: 100vh;
-  }
-}
-
-@media (min-width: 768px) {
-  .send-cloud {
-    bottom: 46%;
-  }
-
-  .x-cloud {
-    bottom: 84%;
-  }
-
-  .tg-cloud {
-    bottom: 63%;
-  }
-}
-
-@media (max-width: 768px) {
-  .locker-room-image {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 5px 0 10px;
-  }
-
-  .clouds-section {
-    gap: 20px;
-    top: 60%;
-    /* height: 100vh; */
-  }
-
-  .cloud-link img {
-    width: 100px;
-  }
-
-  .contract-section {
-    bottom: 20%;
-  }
-
-  .contract-bar {
-    padding: 8px 15px;
-  }
-
-  .contract-text {
+  @media (max-width: 768px) {
     font-size: 0.9em;
   }
-
-  .buy-section {
-    top: 35%;
-  }
-
-  .buy-link img {
-    width: 120px;
-  }
-}
-
-@media (max-width: 480px) {
-  .locker-room-image {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 5px 0 10px;
-  }
-
-  .description-section {
-    top: 45%;
-  }
-
-  .clouds-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    top: 55%;
-  }
-
-  .cloud-link img {
-    width: 80px;
-  }
-
-  .contract-section {
-    bottom: 15%;
-  }
-
-  .contract-bar {
-    padding: 6px 10px;
-  }
-
-  .contract-text {
+  @media (max-width: 480px) {
     font-size: 0.7em;
   }
-
-  /* .frog-bottom-image {
-    width: 100px;
-    bottom: 1%;
-    right: 1%;
-  } */
-
-  .buy-section {
-    top: 30%;
-  }
-
-  .buy-link img {
-    width: 100px;
-  }
-}
-
-@media (max-width: 1040px) {
-  .cloud-link img {
-    width: 90%;
-  }
-
-  /* .send-cloud {
-    top: 38%;
-  }
-  .x-cloud {
-    top: 69%;
-  }
-  .tg-cloud {
-    top: 69%;
-  } */
 }
 
 /* Modal Styles */
@@ -533,69 +527,8 @@ body {
 
 .buy-image {
   min-width: 380px;
-
   width: 100%;
   max-width: 600px;
   height: auto;
   display: block;
-}
-
-@media (min-width: 1040px) {
-  /* .send-cloud {
-  position: absolute;
-  left: 33%;
-  bottom: 36%;
-  width: 50%;
-}
-.tg-cloud{
-  width: 100px;
-  position: absolute;
-  left: 3%;
-  bottom: 53%;
-  width: 50%;
-
-}
-.x-cloud {
-  width: 100px;
-  position: absolute;
-  left: 29%;
-  bottom: 74%;
-  width: 50%;
- 
-} */
-  .clouds-section {
-    height: 100vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .clouds-section {
-    height: 130vh;
-  }
-
-  .send-cloud {
-    bottom: 44%;
-  }
-
-  .tg-cloud {
-    bottom: 55%;
-  }
-
-  .x-cloud {
-    bottom: 74%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .send-cloud {
-    bottom: 54%;
-  }
-
-  .tg-cloud {
-    bottom: 65%;
-  }
-
-  .x-cloud {
-    bottom: 78%;
-  }
 }
