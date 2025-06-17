@@ -321,6 +321,8 @@ body {
   width: 50%;
   @media (max-width: 680px) {
     bottom: 75%;
+    left: 35%;
+    width: 45%;
   }
 
   /* @media (min-width: 600px) {
