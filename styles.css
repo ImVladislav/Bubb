@@ -127,7 +127,7 @@ body {
 
 .description-section {
   position: relative;
-  padding-top: 4%;
+  /* padding-top: 4%; */
   top: 100%;
   /* Adjust as needed */
   width: 100%;
@@ -141,7 +141,7 @@ body {
 }
 
 .description-text {
-  width: 90%;
+  width: 85%;
   /* Adjust size as needed */
   /* width: 1000px; */
   height: auto;
