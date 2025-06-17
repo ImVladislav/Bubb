@@ -87,7 +87,7 @@ body {
   }
 
   @media (min-width: 1040px) {
-    max-width: 50%;
+    max-width: 37%;
   }
 }
 
@@ -298,6 +298,7 @@ body {
   @media (min-width: 1040px) {
     width: 60%;
     bottom: 80%;
+    left: 21%;
   }
   @media (min-width: 1200px) {
     bottom: 80%;
