@@ -351,8 +351,6 @@ body {
   width: 48%;
   height: auto;
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  z-index: 2;
-  position: relative;
   @media (max-width: 768px) {
     width: 100px;
   }
@@ -370,7 +368,7 @@ body {
   bottom: 0;
   /* Adjust as needed */
   /* right: 0; Adjust as needed */
-  /* z-index: 1; */
+  z-index: 1;
 }
 
 .frog-bottom-image {
