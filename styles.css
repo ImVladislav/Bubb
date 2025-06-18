@@ -451,6 +451,40 @@ body {
 .cloud-link:hover img {
   transform: scale(1.13) rotate(-2deg);
 }
+/* @media screen and (max-width: 768px) {
+  .contract-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  padding: 0;
+  border-radius: 0;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 1.1sem;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  background: none;
+  box-shadow: none;
+} */
+  
+ .contract-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  padding: 0;
+  border-radius: 0;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 1em;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  background: none;
+  box-shadow: none;
+} 
 
 .contract-overlay {
   position: absolute;
@@ -464,7 +498,7 @@ body {
   font-size: 1.1sem;
   text-align: center;
   width: 90%;
-  max-width: 500px;
+  max-width: 600px;
   background: none;
   box-shadow: none;
 }
@@ -472,7 +506,7 @@ body {
 .contract-text {
   margin: 0;
   word-break: break-all;
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 1.4;
   font-family: "Comic Sans MS", cursive;
   font-weight: bold;
