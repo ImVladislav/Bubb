@@ -464,7 +464,7 @@ body {
   font-size: 1.1sem;
   text-align: center;
   width: 90%;
-  max-width: 350px;
+  max-width: 500px;
   background: none;
   box-shadow: none;
 }
@@ -589,7 +589,7 @@ body {
 
 .buy-image {
   min-width: 360px;
-  width: 360px;
+  width: 600px;
   max-width: 1000px;
 
   height: auto;
